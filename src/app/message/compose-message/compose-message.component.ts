@@ -20,9 +20,7 @@ export class ComposeMessageComponent implements OnInit {
   users = [];
   message = { 
     chat_id:null,
-    title: null,
-    user_id: null,
-    content: null 
+    message: null 
   };
   selectedUsers = [];
   dropdownSettings: IDropdownSettings;
@@ -64,15 +62,13 @@ export class ComposeMessageComponent implements OnInit {
     this.users.forEach(user => {
     this.composeMessageForm.value.users.forEach(element => {
       if(user._id===element._id){
-        this.message.title = this.composeMessageForm.value.title;
-        this.message.content = this.composeMessageForm.value.content;
-        this.message.user_id = element._id;
+        this.message.message = this.composeMessageForm.value.content;
         this.message.chat_id = user.Chat_Id;
       }
       console.log(this.message);
-      // this.messageService.create(this.message).subscribe(response=>{
-      //   console.log(response);
-      // });
+      this.messageService.create(this.message).subscribe(response=>{
+        console.log(response);
+      });
 
     });
     });

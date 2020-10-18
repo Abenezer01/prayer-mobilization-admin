@@ -10,5 +10,5 @@ export class MessageService extends ApiService {
 
 
   constructor(http: HttpClient) {
-    super(`${EnvService.API_URL}/api/message`, http);
+    super(`${EnvService.API_URL2}`, http);
   }}
