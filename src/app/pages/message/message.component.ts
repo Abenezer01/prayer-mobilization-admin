@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MessageComponent implements OnInit {
 
-  constructor(priva) { }
 
   ngOnInit(): void {
   }
